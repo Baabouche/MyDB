@@ -24,9 +24,11 @@ project "MyDB"
         optimize "Off"
         defines { "DEBUG" }
         buildoptions { "-Wall", "-Wextra", "-Werror", "-fsanitize=address", "-g" }
+        linkoptions { "-fsanitize=address" }
 
     filter "configurations:Release"
         symbols "Off"
         optimize "On"
         defines { "NDEBUG" }
         buildoptions { "-Wall", "-Wextra", "-Werror", "-fsanitize=address", "-O3" }
+        linkoptions { "-fsanitize=address" }
